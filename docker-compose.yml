@@ -2,21 +2,10 @@ version: "3"
 
 services:
   nodejs:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: crm_spa
-    container_name: crm_spa
-    restart: unless-stopped
+    container_name: example
+    restart: always
+    build: .
     ports:
-      - "3001:8080"
-    networks:
-      - app-network
-    command: npm start
-
-networks:
-  app-network:
-    driver: bridge
-
-volumes:
-  node_modules:
+      - "4000:3000"
+    volumes:
+      - .:/usr/src/app
