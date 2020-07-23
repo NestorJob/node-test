@@ -2,9 +2,11 @@ version: "3"
 
 services:
   nodejs:
-    container_name: example
+    container_name: node_test
     restart: always
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "4000:3000"
     volumes:
