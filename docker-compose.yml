@@ -4,3 +4,5 @@ services:
     container_name: node_test
     restart: always
     build: .
+    ports:
+      - "80:3000"
